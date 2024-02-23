@@ -31,34 +31,31 @@ class PDF extends FPDF
     }
     function TableBody()
     { ///table body function
-        include '../model/Report_Model.php'; ///include invoice report model
-        $ReportObj = new Report(); ///create order report object
-        $fromdate = $_POST['FromDate']; //get from date
-        $todate = $_POST['ToDate']; //get to date
-   
-        $row1 = $ReportObj->getInvoiceReport($fromdate, $todate); ///get result report model
+        include '../model/Report_Model.php'; ///include  report model
+        $ReportObj = new Report(); ///create REPORT object
+       
+        $row1 = $ReportObj->getItemReport(); ///get result report model
       
         $this->Cell(0,10,'',0,1);
         $this->Cell(0,10,'',0,1);
         $this->SetFont("Arial","B","10");
        
-        $this->Cell(30, 10, 'INVOICE NO', 1, "", 'C');
-        $this->Cell(36, 10, 'DATE', 1, "", 'C');
-        $this->Cell(30, 10, 'CUSTOMER', 1, "", 'C');
-        $this->Cell(30, 10, 'DISTRICT', 1, "", 'C');
-        $this->Cell(32, 10, 'ITEM COUNT', 1, "", 'C');
-        $this->Cell(32, 10, 'AMOUNT', 1, "1", 'C');
-
+     
+        $this->Cell(30, 10, 'ID', 1, "", 'C');
+        $this->Cell(36, 10, 'ITEM NAME', 1, "", 'C');
+        $this->Cell(30, 10, 'ITEM CATEGORY', 1, "", 'C');
+        $this->Cell(30, 10, 'ITEM SUB CATEGORY', 1, "", 'C');
+        $this->Cell(32, 10, 'ITEM QUANTITY', 1, "1", 'C');
+     
         $counter = 0;
         $this->SetFont("Arial", "", "10");
         $counter++;
         while ($row = $row1->fetch_assoc()) {
-            $this->Cell(30, 10, $row["invoice_no"], 1, "", 'C');
-            $this->Cell(36, 10, $row["date"], 1, "", 'C');
-            $this->Cell(30, 10, $row["fname"], 1, "", 'C');
-            $this->Cell(30, 10, $row["dname"], 1, "", 'C');
-            $this->Cell(32, 10, $row["item_count"], 1, "", 'C');
-            $this->Cell(32, 10, $row["amount"], 1, "1", 'C');
+            $this->Cell(30, 10, $row["id"], 1, "", 'C');
+            $this->Cell(36, 10, $row["item_name"], 1, "", 'C');
+            $this->Cell(30, 10, $row["icname"], 1, "", 'C');
+            $this->Cell(30, 10, $row["iscname"], 1, "", 'C');
+            $this->Cell(32, 10, $row["quantity"], 1, "1", 'C');
         }
     }
     function Terms_Singature()
