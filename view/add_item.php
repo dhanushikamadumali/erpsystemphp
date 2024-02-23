@@ -20,7 +20,7 @@ $ItemSubCategoryResult = $ItemObj->Allitemsubcategory(); ///get all Item
 <body>
     <?php
     include '../includes/navbar.php';//include navbaer
-  
+    include_once '../includes/redirect.php';///include redirect
     ?>
     <div class="container">
         <div class="row"><div class="col-md-12">&nbsp;</div></div>

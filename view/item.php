@@ -35,7 +35,7 @@ $ItemResult = $ItemObj->getAllItem(); ///get all Item
         <div class="row">
             <div class="col-md-12">
                 <nav aria-label="Breadcrumb" class="breadcrumb" style="height:49px;">
-                    <h4>ITEM MANAGEMENT</h4>
+                    <h4>ITEM</h4>
                 </nav>
             </div>
         </div>

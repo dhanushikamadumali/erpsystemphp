@@ -27,7 +27,7 @@ $CustomerResult = $CustomerObj->getAllCustomer();///get all customer
         <div class="row">
             <div class="col-md-12">
             <nav aria-label="Breadcrumb" class="breadcrumb" style="height:49px;">
-            <h4>CUSTOMER MANAGEMENT</h4>
+            <h4>CUSTOMER</h4>
             </nav>
             </div>
         </div>

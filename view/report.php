@@ -34,7 +34,7 @@
         <div class="row">
             <div class="col-md-12">
             <nav aria-label="Breadcrumb" class="breadcrumb" style="height:49px;">
-            <h4>REPORT MANAGEMENT</h4>
+            <h4>REPORT</h4>
             </nav>
             </div>
         </div>
