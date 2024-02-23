@@ -53,6 +53,12 @@ $ItemResult = $ReportObj->getItemReport(); ///get all Item
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <!-- INCOME -->
                         <div class="row">&nbsp;</div>
+                    <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                          <a href="../view/report_item.php"   class="btn btn-primary ">PDF </a> 
+                        </div>
+                    </div>
+                    <div class="row">&nbsp;</div>
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <table class="table table-bordered" id="example">

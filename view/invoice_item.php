@@ -42,23 +42,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-md-12">
-                        <?php
-                        if (isset($_GET["msg"])) {
-                        ?>
-                            <div class="col-md-12">
-                                <div class="alert alert-success">
-                                    <?php
-                                    $msg = $_REQUEST["msg"];
-                                    $msg = base64_decode($msg);
-                                    echo $msg;
-                                    ?>
-                                </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
-                    </div>
+                   
                 </div>
                 <!-- <div class="row"><div class="col-md-12">&nbsp;</div></div> -->
                 <div class="row">

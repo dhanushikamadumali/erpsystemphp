@@ -31,11 +31,11 @@ class PDF extends FPDF
     }
     function TableBody()
     { ///table body function
-        include '../model/Report_Model.php'; ///include invoice report model
-        $ReportObj = new Report(); ///create order report object
+        include '../model/Report_Model.php'; ///include report model
+        $ReportObj = new Report(); ///create  report object
         $fromdate = $_POST['FromDate']; //get from date
         $todate = $_POST['ToDate']; //get to date
-   
+  
         $row1 = $ReportObj->getInvoiceReport($fromdate, $todate); ///get result report model
       
         $this->Cell(0,10,'',0,1);

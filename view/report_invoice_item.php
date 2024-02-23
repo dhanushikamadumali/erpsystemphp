@@ -25,40 +25,41 @@ class PDF extends FPDF
         $this->Cell(0, 10, '', 0, 1);
         $this->Cell(0, 10, '', 0, 1);
         $this->SetFont("times", "B", "20");
-        $this->Cell(190, 0, 'AVAILABLE INVOICE REPORT', 0, 0, 'C');
+        $this->Cell(190, 0, 'AVAILABLE INVOICE ITEM REPORT', 0, 0, 'C');
         $this->Ln();
         $this->Cell(190, 0, "______________________________", 0, 0, "C");
     }
     function TableBody()
     { ///table body function
-        include '../model/Report_Model.php'; ///include invoice report model
-        $ReportObj = new Report(); ///create order report object
+        include '../model/Report_Model.php'; ///include  report model
+        $ReportObj = new Report(); ///create  report object
         $fromdate = $_POST['FromDate']; //get from date
         $todate = $_POST['ToDate']; //get to date
-   
-        $row1 = $ReportObj->getInvoiceReport($fromdate, $todate); ///get result report model
-      
-        $this->Cell(0,10,'',0,1);
-        $this->Cell(0,10,'',0,1);
-        $this->SetFont("Arial","B","10");
-       
+
+        $row1 = $ReportObj->getInvoiceItemReport($fromdate, $todate); ///get result report model
+
+        $this->Cell(0, 10, '', 0, 1);
+        $this->Cell(0, 10, '', 0, 1);
+        $this->SetFont("Arial", "B", "10");
+
         $this->Cell(30, 10, 'INVOICE NO', 1, "", 'C');
         $this->Cell(36, 10, 'DATE', 1, "", 'C');
         $this->Cell(30, 10, 'CUSTOMER', 1, "", 'C');
-        $this->Cell(30, 10, 'DISTRICT', 1, "", 'C');
-        $this->Cell(32, 10, 'ITEM COUNT', 1, "", 'C');
-        $this->Cell(32, 10, 'AMOUNT', 1, "1", 'C');
+        $this->Cell(36, 10, 'ITEM NAME/CODE', 1, "", 'C');
+        $this->Cell(32, 10, 'ITEM CATEGORY', 1, "", 'C');
+        $this->Cell(30, 10, 'PRICE', 1, "1", 'C');
+
 
         $counter = 0;
         $this->SetFont("Arial", "", "10");
         $counter++;
         while ($row = $row1->fetch_assoc()) {
             $this->Cell(30, 10, $row["invoice_no"], 1, "", 'C');
-            $this->Cell(36, 10, $row["date"], 1, "", 'C');
+            $this->Cell(36, 10, $row["idate"], 1, "", 'C');
             $this->Cell(30, 10, $row["fname"], 1, "", 'C');
-            $this->Cell(30, 10, $row["dname"], 1, "", 'C');
-            $this->Cell(32, 10, $row["item_count"], 1, "", 'C');
-            $this->Cell(32, 10, $row["amount"], 1, "1", 'C');
+            $this->Cell(36, 10, $row["iname"]."/".$row["icode"], 1, "", 'C');
+            $this->Cell(32, 10, $row["icname"], 1, "", 'C');
+            $this->Cell(30, 10, $row["iprice"], 1, "1", 'C');
         }
     }
     function Terms_Singature()
